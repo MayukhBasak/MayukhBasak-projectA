@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title> 
+    <style>
+        #inner-content{
+            text-align: center;
+            background-color: rgb(255, 224, 177);
+            opacity: 3;
+            border: 5px solid rgb(255, 224, 177);
+            margin: 100px;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 5px 20px 5px rgb(162, 146, 123);
+        }
+    </style>
+</html>
+</head>
+<body>
+    <div id="inner-content">
+        <nav style="border: 2px solid #2c3a47; background-color: #2c3a47; color: rgb(255, 224, 177);"><strong>this is temperature converter</strong></nav>
+        <div id="temperature">
+            <div id="celciuus">
+            <level>Celcious</level><br>
+            <input type="number" value="0" class="input" id="cel">
+            </div>
+            <div id="fahrenhite">
+                <level>Fahrenhite</level><br>
+                <input type="number" value="32" id="fah" class="input">
+            </div>
+          </div>
+          </div>
+          <script>
+            let cel= document.getElementById("cel")
+            let fah= document.getElementById("fah")
+            cel.addEventListener("input", function(){
+                let c=this.value;
+                let f=(c*9/5)+32;
+                if(!Number.isInteger()){
+                    f=f.toFixed(4);
+                }
+                fah.value=f;
+            })
+            fah.addEventListener("input", function(){
+                let f=this.value;
+                let c=(f-32)*5/9;
+                if(!Number.isInteger()){
+                    c=c.toFixed(4);
+                }
+                cel.value=c;
+            })
+          </script>
+</body>
+</html>
